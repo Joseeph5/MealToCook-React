@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import { useGlobalContext } from "../Context";
+import React, { useEffect } from 'react';
+import { useGlobalContext } from '../Context';
 export default function SearchForm() {
   const { setSearchTerm } = useGlobalContext();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("ssssssss");
+    console.log('ssssssss');
   };
 
   useEffect(() => {
-    setSearchTerm("");
+    setSearchTerm('');
   }, []);
 
   return (

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import Loading from "../components/Loading";
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import Loading from '../components/Loading';
+import { useGlobalContext } from '../Context';
 
-const url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
+const url = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
 
 export default function MealDetails() {
+  const { setSearchTerm } = useGlobalContext();
   const [meal, setMeal] = useState([]);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
@@ -18,6 +20,7 @@ export default function MealDetails() {
   };
 
   useEffect(() => {
+    setSearchTerm('');
     setTimeout(() => {
       fetchMealDetails(url, id);
     }, 500);
@@ -50,7 +53,7 @@ export default function MealDetails() {
             <span className='meal-details-data'>tags :</span> {meal.strTags}
           </p>
           <p>
-            <span className='meal-details-data'>instructons :</span>{" "}
+            <span className='meal-details-data'>instructons :</span>{' '}
             {meal.strInstructions}
           </p>
 

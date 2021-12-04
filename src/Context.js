@@ -1,12 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from 'react';
 
 const AppContext = React.createContext();
-const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+const url = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
 export default function AppProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [mealsList, setMealsList] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
 
   const fetchData = async (url, search) => {
     setLoading(true);

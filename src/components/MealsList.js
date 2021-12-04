@@ -1,7 +1,8 @@
-import React from "react";
-import { useGlobalContext } from "../Context";
-import Loading from "./Loading";
-import Meal from "./Meal";
+import React from 'react';
+import { useGlobalContext } from '../Context';
+import Loading from './Loading';
+import Meal from './Meal';
+
 export default function MealsList() {
   const { mealsList, loading } = useGlobalContext();
 
